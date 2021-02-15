@@ -23,16 +23,6 @@ def result(req, res_id):
 	path = os.path.join(BASE_DIR, 'uploads\\' + str(res_id) + '\\t.txt')
 	p_values = parse_res.main(path)
 	res = Results(generator = inp, pvalues = p_values)
-	print("pvalues", p_values, "JSON: ", json.dumps(p_values))
 	res.save(using = 'results')
 	return render(req, 'result.html', {'res': res})
-	'''try:
-		inp = Input.objects.get(pk = res_id)
-		path = os.path.join(BASE_DIR, 'uploads\\' + str(res_id) + '\\t.txt')
-		p_values = parse_res.main(path)
-		res = Results(generator = inp, pvalues = p_values)
-		res.save(using = 'results')'''
-	'''except Results.DoesNotExist:
-		raise Http404
-	return render(req, 'result.html', {'res': res})'''
-	
+

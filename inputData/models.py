@@ -1,6 +1,4 @@
 from django.db import models
-'''from django import forms'''
-'''from django.contrib.auth.models import AbstractUser'''
 
 
 from django.db.models.signals import pre_save
@@ -19,11 +17,4 @@ class Input(models.Model):
 	
 	file = models.FileField()
 	
-	
-	
-	
-	
-'''@receiver(pre_save, sender=Input)
-def path_to_rawFile(sender, instance, **kwargs):
-	instance.file = models.FileField(upload_to= kwargs["path"])'''
 	
